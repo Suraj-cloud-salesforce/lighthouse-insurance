@@ -5,43 +5,27 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Lighthouse Insurance</title>
-
-<!-- Google Fonts -->
+<title>Lighthouse UI</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-
-/* RESET */
 *{margin:0;padding:0;box-sizing:border-box;}
-
-:root{
-  --navy:#0C2340;
-  --navy-mid:#163860;
-  --gold:#C98A1A;
-  --gold-light:#E8A830;
-  --white:#fff;
-  --gray:#6b7280;
-}
 
 body{
   font-family:'DM Sans',sans-serif;
+  color:#1f2937;
 }
 
 /* NAV */
 nav{
-  position:fixed;
-  top:0;
-  width:100%;
   height:70px;
-  background:rgba(12,35,64,0.95);
+  background:#0C2340;
+  color:#fff;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:0 40px;
-  color:#fff;
-  z-index:100;
+  padding:0 60px;
 }
 
 nav ul{
@@ -57,84 +41,103 @@ nav a{
 }
 
 .nav-btn{
-  background:var(--gold);
+  background:#E8A830;
   padding:8px 16px;
   border-radius:4px;
 }
 
 /* HERO */
 .hero{
-  padding-top:70px;
-  min-height:100vh;
   display:grid;
   grid-template-columns:1fr 1fr;
   background:linear-gradient(135deg,#0C2340,#163860,#1B4A7A);
   color:#fff;
+  padding:80px 60px;
 }
 
-.hero-left{
-  padding:80px;
-}
-
-.hero-left h1{
+.hero h1{
   font-family:'Playfair Display';
-  font-size:50px;
+  font-size:48px;
   line-height:1.2;
 }
 
-.hero-left em{
-  color:var(--gold-light);
+.hero em{
+  color:#E8A830;
 }
 
-.hero-left p{
+.hero p{
   margin:20px 0;
   color:rgba(255,255,255,0.7);
-}
-
-.buttons{
-  margin-top:20px;
+  max-width:500px;
 }
 
 .btn{
-  padding:12px 25px;
-  margin-right:10px;
-  text-decoration:none;
+  padding:12px 24px;
   border-radius:4px;
+  text-decoration:none;
+  margin-right:10px;
 }
 
 .btn-primary{
-  background:var(--gold);
+  background:#C98A1A;
   color:#fff;
 }
 
 .btn-outline{
-  border:1px solid #fff;
+  border:1px solid rgba(255,255,255,0.4);
   color:#fff;
 }
 
-/* CARD */
+/* POLICY CARD */
 .card{
   background:rgba(255,255,255,0.08);
   padding:30px;
-  border-radius:12px;
-  width:350px;
+  border-radius:16px;
+  width:360px;
   margin:auto;
   backdrop-filter:blur(10px);
 }
 
 .card h3{
+  color:#E8A830;
+  font-size:12px;
+  letter-spacing:1px;
   margin-bottom:10px;
+}
+
+.card strong{
+  font-size:22px;
+  display:block;
+  margin-bottom:20px;
 }
 
 .row{
   display:flex;
   justify-content:space-between;
   margin:10px 0;
+  font-size:14px;
 }
 
-/* SECTION */
+.divider{
+  border-top:1px solid rgba(255,255,255,0.1);
+  margin:15px 0;
+}
+
+/* COVERAGE SECTION */
 .section{
-  padding:60px;
+  padding:80px 60px;
+  background:#f8f5ef;
+}
+
+.section h2{
+  font-family:'Playfair Display';
+  font-size:36px;
+  margin-bottom:10px;
+}
+
+.section p{
+  color:#6b7280;
+  margin-bottom:40px;
 }
 
 .grid{
@@ -144,71 +147,74 @@ nav a{
 }
 
 .box{
-  border:1px solid #ddd;
-  padding:20px;
-  border-radius:10px;
   background:#fff;
+  border:1px solid #e5e7eb;
+  padding:25px;
+  border-radius:12px;
+  transition:0.3s;
 }
 
 .box:hover{
+  border-color:#1B5FA4;
   transform:translateY(-5px);
 }
 
-/* CHAT BUTTON */
-.chat-btn{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  width:60px;
-  height:60px;
+.box h3{
+  font-family:'Playfair Display';
+  margin-bottom:10px;
+}
+
+/* CLAIM SECTION */
+.claims{
+  padding:80px 60px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+}
+
+.claims h2{
+  font-family:'Playfair Display';
+  font-size:36px;
+}
+
+.step{
+  display:flex;
+  gap:15px;
+  margin-top:20px;
+}
+
+.step-num{
+  width:35px;
+  height:35px;
   border-radius:50%;
-  background:#0176D3;
+  background:#0C2340;
   color:#fff;
   display:flex;
   align-items:center;
   justify-content:center;
-  cursor:pointer;
 }
 
-/* CHAT WINDOW */
-.chat{
-  position:fixed;
-  bottom:90px;
-  right:20px;
-  width:300px;
-  height:400px;
-  background:#fff;
-  border-radius:10px;
-  display:none;
-  flex-direction:column;
-}
-
-.chat-header{
-  background:#0176D3;
+.claim-box{
+  background:#0C2340;
   color:#fff;
-  padding:10px;
+  padding:30px;
+  border-radius:16px;
 }
 
-.chat-body{
-  flex:1;
-  padding:10px;
-  overflow:auto;
+.claim-box h4{
+  margin-bottom:20px;
 }
 
-.chat-input{
+.track{
   display:flex;
+  justify-content:space-between;
+  margin:10px 0;
 }
 
-.chat-input input{
-  flex:1;
-  padding:10px;
-}
-
-.chat-input button{
-  background:#0176D3;
-  color:#fff;
-  border:none;
-  padding:10px;
+.amount{
+  margin-top:20px;
+  font-size:28px;
+  color:#E8A830;
 }
 
 </style>
@@ -220,14 +226,14 @@ nav a{
 <!-- NAV -->
 
 <nav>
-  <h3>Lighthouse</h3>
+  <h3>Lighthouse Insurance</h3>
   <ul>
     <li><a href="#">Personal</a></li>
     <li><a href="#">Business</a></li>
     <li><a href="#">Claims</a></li>
     <li><a href="#">About</a></li>
     <li><a href="#">Contact</a></li>
-    <li><a href="#" class="nav-btn">Get Quote</a></li>
+    <li><a href="#" class="nav-btn">Get a Quote</a></li>
   </ul>
 </nav>
 
@@ -235,22 +241,25 @@ nav a{
 
 <section class="hero">
 
-<div class="hero-left">
+<div>
   <h1>Coverage built for life as it <em>actually</em> happens.</h1>
-  <p>Insurance made simple and fast with AI support.</p>
+  <p>Since 1987, Lighthouse Insurance Group has protected families and businesses with fast and fair claims.</p>
 
-  <div class="buttons">
-    <a href="#" class="btn btn-primary">Get Quote</a>
-    <a href="#" class="btn btn-outline">Explore</a>
-  </div>
+<a href="#" class="btn btn-primary">Get Your Free Quote</a> <a href="#" class="btn btn-outline">Explore Coverage →</a>
+
 </div>
 
-<div class="hero-right">
+<div>
   <div class="card">
-    <h3>Active Policy</h3>
-    <p>LHG-2024-0047821</p>
+    <h3>ACTIVE POLICY</h3>
+    <strong>LHG-2024-0047821</strong>
 
 ```
+<div class="row"><span>Policyholder</span><span>Sarah M.</span></div>
+<div class="row"><span>Coverage</span><span>Home + Auto</span></div>
+
+<div class="divider"></div>
+
 <div class="row"><span>Premium</span><span>$312</span></div>
 <div class="row"><span>Coverage</span><span>$485K</span></div>
 ```
@@ -260,56 +269,77 @@ nav a{
 
 </section>
 
-<!-- PRODUCTS -->
+<!-- COVERAGE -->
 
 <section class="section">
-  <h2>Coverage</h2>
+  <h2>Protection for every part of your life.</h2>
+  <p>Transparent, competitively priced coverage.</p>
 
   <div class="grid">
-    <div class="box">Home Insurance</div>
-    <div class="box">Auto Insurance</div>
-    <div class="box">Life Insurance</div>
-    <div class="box">Business Insurance</div>
+    <div class="box">
+      <h3>Homeowners</h3>
+      <p>Protection for your home and property.</p>
+    </div>
+
+```
+<div class="box">
+  <h3>Auto Insurance</h3>
+  <p>Full coverage for vehicles and drivers.</p>
+</div>
+
+<div class="box">
+  <h3>Life Insurance</h3>
+  <p>Secure your family’s future.</p>
+</div>
+
+<div class="box">
+  <h3>Commercial</h3>
+  <p>Business insurance solutions.</p>
+</div>
+```
+
   </div>
 </section>
 
-<!-- CHAT -->
+<!-- CLAIMS -->
 
-<div class="chat-btn" onclick="toggleChat()">💬</div>
+<section class="claims">
 
-<div class="chat" id="chatBox">
-  <div class="chat-header">Ava Assistant</div>
-  <div class="chat-body" id="chatBody"></div>
-  <div class="chat-input">
-    <input id="msg"/>
-    <button onclick="sendMsg()">Send</button>
+<div>
+  <h2>Resolved in days, not weeks.</h2>
+
+  <div class="step">
+    <div class="step-num">1</div>
+    <div>Report your claim</div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">2</div>
+    <div>Upload documents</div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">3</div>
+    <div>Adjuster review</div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">4</div>
+    <div>Payment issued</div>
   </div>
 </div>
 
-<script>
+<div class="claim-box">
+  <h4>Claim Tracker</h4>
 
-function toggleChat(){
-  let chat=document.getElementById('chatBox');
-  chat.style.display = chat.style.display==='flex' ? 'none' : 'flex';
-}
+  <div class="track"><span>Submitted</span><span>Done</span></div>
+  <div class="track"><span>Review</span><span>Done</span></div>
+  <div class="track"><span>Assessment</span><span>In Progress</span></div>
 
-function sendMsg(){
-  let input=document.getElementById('msg');
-  let body=document.getElementById('chatBody');
+  <div class="amount">$14,200</div>
+</div>
 
-  let msg=input.value;
-  if(!msg) return;
-
-  body.innerHTML += "<p><b>You:</b> "+msg+"</p>";
-
-  setTimeout(()=>{
-    body.innerHTML += "<p><b>Ava:</b> Got it! I'll help you.</p>";
-  },500);
-
-  input.value="";
-}
-
-</script>
+</section>
 
 </body>
 </html>
